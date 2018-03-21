@@ -16,8 +16,10 @@ into :
 
 # How ?
 
+## 1 
 The `FreezeVersionRequires.php` must be placed into `bin/` folder at project's root.
 
+## 2
 Add the following script into composer.json :
 ```<?php
 "scripts":{
@@ -27,7 +29,10 @@ Add the following script into composer.json :
 },
 ```
 
+## 3
 Then you can simply launch `composer freeze-version` !
+
+<hr>
 
 PS: ensure the `bin/` folder is autoloaded :
 ```<?php
