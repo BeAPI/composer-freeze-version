@@ -16,9 +16,18 @@ into :
 
 # How ?
 
-The `FreezeVersionRequires.php` must be placed into `/bin/` folder at project's root.
+The `FreezeVersionRequires.php` must be placed into `bin/` folder at project's root.
 
-With the following script into composer.json :
+PS: ensure the `bin/` folder is autoloaded :
+```<?php
+"autoload":{
+	"psr-4": {
+		"BEA\\ComposerInstaller\\": "bin/"
+	},
+}
+```
+
+Add the following script into composer.json :
 ```<?php
 "scripts":{
     "freeze-version":[
