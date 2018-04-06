@@ -16,32 +16,15 @@ into :
 
 # How ?
 
-## 1 
-The `FreezeVersionRequires.php` must be placed into `bin/` folder at project's root.
+## 1 [Composer](http://composer.rarst.net/)
 
-## 2
-Add the following script into composer.json :
-```<?php
-"scripts":{
-    "freeze-version":[
-        "BEA\\ComposerInstaller\\FreezeVersionRequires::freezeVersion"
-    ]
-},
-```
+- Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/composer-freeze-version" }`.
+- Include `"bea/composer/composer-freeze-version": "dev-master"` in your composer file as require dev
 
-## 3
+## 2 Run command 
+
 Then you can simply launch `composer freeze-version` !
 
-<hr>
-
-PS: ensure the `bin/` folder is autoloaded :
-```<?php
-"autoload":{
-	"psr-4": {
-		"BEA\\ComposerInstaller\\": "bin/"
-	},
-}
-```
 
 # Who ?
 
