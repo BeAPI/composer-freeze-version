@@ -16,15 +16,15 @@ into :
 
 # How ?
 
-## 1 [Composer](http://composer.rarst.net/)
+## 1 - Add to [Composer](http://composer.rarst.net/)
 
 - Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/composer-freeze-version" }`.
-- Include `"bea/composer/composer-freeze-version": "dev-master"` in your composer file as require dev
+- Include `"bea/composer/composer-freeze-version": "dev-master"` into your composer.json file as require dev.
+- Then composer update before use.
 
-## 2 Run command 
+## 2 - Run command 
 
 Then you can simply launch `composer freeze-version` !
-
 
 # Who ?
 
