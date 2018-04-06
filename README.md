@@ -19,7 +19,7 @@ into :
 ## 1 [Composer](http://composer.rarst.net/)
 
 - Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/composer-freeze-version" }`.
-- Include `"bea/composer/make-stable": "dev-master"` in your composer file as require dev
+- Include `"bea/composer/composer-freeze-version": "dev-master"` in your composer file as require dev
 
 ## 2 Run command 
 
