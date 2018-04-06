@@ -4,6 +4,9 @@
 
 Freeze versions of your composer's dependencies.
 
+This command is especially useful while making a site live. It allows you to grab latest versions of your composer.lock which you tested you site against.
+If you would like to go back to a staging status, use another command : [Make Stable](https://github.com/BeAPI/composer-make-stable) to set versions stable.
+
 # What ?
 
 Your dependencies into composer.json will be automatically be changed from :
@@ -20,7 +23,7 @@ into :
 
 - Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/composer-freeze-version" }`.
 - Include `"bea/composer/composer-freeze-version": "dev-master"` into your composer.json file as require dev.
-- Then composer update before use.
+- Then `composer update` before use.
 
 ## 2 - Run command 
 
