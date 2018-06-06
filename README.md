@@ -17,6 +17,8 @@ into :
 
 `"wpackagist-plugin/wordpress-seo":"6.2"`
 
+![Composer Freeze Vesrion : how to)](https://blog.beapi.fr/wp-content/uploads/2018/06/bea-composer-freeze-version.gif)
+
 # How ?
 
 ## 1 - Add to [Composer](http://composer.rarst.net/)
