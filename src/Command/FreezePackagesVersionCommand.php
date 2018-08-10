@@ -71,7 +71,7 @@ class FreezePackagesVersionCommand extends BaseCommand
                     if (!isset($lockVersions[$package])) {
                         continue;
                     }
-                    $composerJson['require'][$package] = $lockVersions[$package];
+                    $composerJson['require'][$package] = (string) $lockVersions[$package];
                 }
             }
 
@@ -81,7 +81,7 @@ class FreezePackagesVersionCommand extends BaseCommand
                     if (!isset($lockVersions[$package])) {
                         continue;
                     }
-                    $composerJson['require-dev'][$package] = $lockVersions[$package];
+                    $composerJson['require-dev'][$package] = (string) $lockVersions[$package];
                 }
             }
 
