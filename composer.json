@@ -1,5 +1,5 @@
 {
-    "name": "bea/composer/freeze-version",
+    "name": "beapi/composer-freeze-version",
     "type": "composer-plugin",
     "license": "MIT",
     "authors": [
