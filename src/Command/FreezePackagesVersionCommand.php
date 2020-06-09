@@ -14,7 +14,7 @@ class FreezePackagesVersionCommand extends BaseCommand
     {
         $this->setName('freeze-version');
         $this->setDescription(
-            'Freeze all the packages\'s versions in your composer.json with the ones from the lock file.'
+            'Freeze all the packages versions in your composer.json with the ones from the lock file.'
         );
     }
 
@@ -25,7 +25,7 @@ class FreezePackagesVersionCommand extends BaseCommand
 
         // what is the command's purpose
         $output->writeln(
-            "<info>Hello, this command allows you to freeze all plugins versions according to your composer.lock file.</info>"
+            "<info>Hello, this command allows you to freeze all packages versions according to your composer.lock file.</info>"
         );
         if ( false === $io->askConfirmation(
                 "Do you really want to freeze all requirement versions now (y/n) ? ",
