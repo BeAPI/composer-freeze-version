@@ -14,7 +14,7 @@ class FreezePackagesVersionCommand extends BaseCommand
     {
         $this->setName('freeze-version');
         $this->setDescription(
-            'Freeze all the package\'s versions in your composer.json with the ones from the lock file.'
+            'Freeze all the packages versions in your composer.json with the ones from the lock file.'
         );
     }
 
@@ -25,13 +25,13 @@ class FreezePackagesVersionCommand extends BaseCommand
 
         // what is the command's purpose
         $output->writeln(
-            "<info>Hello, this command allows you to freeze all plugins versions according to your composer.lock file.</info>"
+            "<info>Hello, this command allows you to freeze all packages versions according to your composer.lock file.</info>"
         );
-        if (false === $io->askConfirmation(
+        if ( false === $io->askConfirmation(
                 "Do you really want to freeze all requirement versions now (y/n) ? ",
                 true
             )) {
-            exit;
+            return 0;
         }
 
         $composerPath = $composer->getConfig()->getConfigSource()->getName();
@@ -40,21 +40,21 @@ class FreezePackagesVersionCommand extends BaseCommand
         $composerFile = new JsonFile($composerPath);
         if (!$composerFile->exists()) {
             $output->writeln("<error>Composer file not found.</error>");
-            exit;
+            return 1;
         }
 
         // if we cannot write then bail
-        if (!is_writeable($composerPath)) {
+        if (!is_writable($composerPath)) {
             $output->writeln("<error>The composer.json file cannot be rewritten !</error>");
             $output->writeln("<error>Please check your file permissions.</error>");
-            exit;
+            return 1;
         }
 
         $lockFile = new JsonFile($lockPath);
         if (!$lockFile->exists()) {
             $output->writeln("<warning>No composer lock file found.</warning>");
             $output->writeln("You need to run a composer update once before using this command.");
-            exit;
+            return 1;
         }
 
         try {
@@ -62,7 +62,7 @@ class FreezePackagesVersionCommand extends BaseCommand
             $lockJson = $lockFile->read();
             if (!isset($lockJson['packages']) || !isset($lockJson['packages-dev'])) {
                 $output->writeln("<warning>Your lock file does not contain any packages.<warning>");
-                exit;
+                return 1;
             }
 
             if (isset($composerJson['require'])) {
@@ -86,11 +86,12 @@ class FreezePackagesVersionCommand extends BaseCommand
             }
 
             $composerFile->write($composerJson);
-            $output->writeln("All required versions have been freezed \o/");
+            $output->writeln("All required versions have been freeze.");
+            return 0;
         } catch (RuntimeException $e) {
             $output->writeln("<error>An error occurred</error>");
             $output->writeln(sprintf("<error>%s</error>", $e->getMessage()));
-            exit;
+            return 1;
         }
     }
 }
