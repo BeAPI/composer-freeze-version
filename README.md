@@ -21,11 +21,9 @@ into :
 
 # How ?
 
-## 1 - Add to [Composer](http://composer.rarst.net/)
+## 1 - Add to Composer
 
-- Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/composer-freeze-version" }`.
-- Include `"beapi/composer-freeze-version": "dev-master"` into your composer.json file as require dev.
-- Then `composer update` before use.
+- Make `composer required --dev "beapi/composer-freeze-version": "dev-master"`
 
 ## 2 - Run command 
 
