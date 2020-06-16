@@ -23,7 +23,7 @@ into :
 
 ## 1 - Add to Composer
 
-- Make `composer required --dev "beapi/composer-freeze-version": "dev-master"`
+- Make `composer require --dev "beapi/composer-freeze-version": "dev-master"`
 
 ## 2 - Run command 
 
